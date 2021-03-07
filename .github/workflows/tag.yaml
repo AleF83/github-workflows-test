@@ -1,0 +1,15 @@
+name: PR
+
+on:
+  create:
+    tags:
+      - v*
+      
+jobs:
+  show_tag:
+    name: 'Show tag'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo
+        run: echo -e ${{ github.event.ref#v }}
+            
