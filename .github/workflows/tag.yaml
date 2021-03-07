@@ -9,7 +9,9 @@ jobs:
   show_tag:
     name: 'Show tag'
     runs-on: ubuntu-latest
+    env:
+      GITUB_TAG: ${{ github.event.ref }}
     steps:
       - name: Echo
-        run: echo -e ${{ github.event.ref#v }}
+        run: echo -e ${GITUB_TAG#v}
             
