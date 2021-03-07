@@ -13,5 +13,5 @@ jobs:
       GITUB_TAG: ${{ github.event.ref }}
     steps:
       - name: Echo
-        run: echo -e ${GITUB_TAG#v}
+        run: echo -e ${{ env.GITUB_TAG#v }}
             
